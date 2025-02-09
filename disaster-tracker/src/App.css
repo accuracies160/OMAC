@@ -1,16 +1,85 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
 .App {
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
 h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
+/* Filter Styles */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-container label {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.filter-container select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.filter-container select:hover {
+  border-color: #3498db;
+}
+
+/* Map Styles */
+.map-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
 .leaflet-container {
-  height: 80vh;
+  height: 70vh;
   width: 100%;
-  margin: 0 auto;
+}/* App.css */
+.App {
+  text-align: center;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.leaflet-container {
+  height: 70vh;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Spinner styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
 }
