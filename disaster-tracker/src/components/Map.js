@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-
 const Map = ({ magnitudeFilter }) => {
   const [earthquakes, setEarthquakes] = useState([]);
-
   // Fetch earthquake data from USGS API
   useEffect(() => {
     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
@@ -19,7 +17,6 @@ const Map = ({ magnitudeFilter }) => {
       })
       .catch((error) => console.error('Error fetching earthquake data:', error));
   }, [magnitudeFilter]);
-
   // Custom earthquake icon
   const earthquakeIcon = new L.Icon({
     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
@@ -27,7 +24,6 @@ const Map = ({ magnitudeFilter }) => {
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
   });
-
   return (
     <MapContainer center={[0, 0]} zoom={2} style={{ height: '500px', width: '100%' }}>
       <TileLayer
@@ -54,5 +50,4 @@ const Map = ({ magnitudeFilter }) => {
     </MapContainer>
   );
 };
-
 export default Map;
