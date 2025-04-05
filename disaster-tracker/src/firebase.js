@@ -4,12 +4,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBJaCVwxa2X9dlwztGjHSaf_U-UuTZRZ8U",
+  authDomain: "andrewomac.firebaseapp.com",
+  projectId: "andrewomac",
+  storageBucket: "andrewomac.firebasestorage.app",
+  messagingSenderId: "573777333673",
+  appId: "1:573777333673:web:429b3b0001db2965f9c8b8",
+  measurementId: "G-MDJRZZMRNF"
 };
 
 const app = initializeApp(firebaseConfig);
