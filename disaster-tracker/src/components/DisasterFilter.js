@@ -20,15 +20,6 @@ const DisasterFilter = ({ disasterFilter, onFilterChange }) => {
       <label style={{ marginLeft: '10px' }}>
         <input
           type="checkbox"
-          name="hurricane"
-          checked={disasterFilter.hurricane}
-          onChange={handleChange}
-        />
-        Hurricanes
-      </label>
-      <label style={{ marginLeft: '10px' }}>
-        <input
-          type="checkbox"
           name="wildfire"
           checked={disasterFilter.wildfire}
           onChange={handleChange}
