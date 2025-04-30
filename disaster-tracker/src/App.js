@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Map from './components/Map';
 import Filter from './components/Filter';
 import DisasterFilter from './components/DisasterFilter';
 import AuthButtons from './components/AuthButtons';
 import NotificationService from './components/NotificationService';
+import Noticeboard from './components/Noticeboard';
+import Navbar from './components/Navbar';
+import AccountPage from './components/AccountPage'; // Add this import
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -23,16 +27,46 @@ function App() {
     setDisasterFilter(newFilter);
   };
 
-  return (
+   return (
     <div className="App">
-      <AuthButtons />
-      <h1>Natural Disaster Tracker</h1>
-      <Filter onFilterChange={handleFilterChange} />
-      <DisasterFilter
-        disasterFilter={disasterFilter}
-        onFilterChange={handleDisasterFilterChange}
-      />
-      <Map magnitudeFilter={magnitudeFilter} disasterFilter={disasterFilter} />
+      <Navbar />
+      <div style={{ 
+        position: 'fixed', 
+        top: '20px', 
+        right: '20px', 
+        zIndex: 1001 // Higher than navbar
+      }}>
+        <AuthButtons />
+      </div>
+      
+      <div style={{ 
+        paddingTop: '80px', // Account for fixed navbar
+        minHeight: 'calc(100vh - 80px)'
+      }}>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <h1>Natural Disaster Tracker</h1>
+              <Filter onFilterChange={handleFilterChange} />
+              <DisasterFilter
+                disasterFilter={disasterFilter}
+                onFilterChange={handleDisasterFilterChange}
+              />
+              <Map magnitudeFilter={magnitudeFilter} disasterFilter={disasterFilter} />
+            </>
+          } />
+          <Route path="/noticeboard" element={
+            <div style={{ padding: '20px' }}>
+              <Noticeboard />
+            </div>
+          } />
+          <Route path="/account" element={
+            <div style={{ padding: '20px' }}>
+              <AccountPage />
+            </div>
+          } />
+        </Routes>
+      </div>
     </div>
   );
 }
