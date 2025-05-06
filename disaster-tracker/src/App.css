@@ -552,7 +552,6 @@ h1 {
 }
 
 .modal-overlay {
-  /* Remove this if you're not using a full-screen overlay */
 }
 
 @keyframes modalFadeIn {
