@@ -8,7 +8,7 @@ import AuthButtons from './components/AuthButtons';
 import NotificationService from './components/NotificationService';
 import Noticeboard from './components/Noticeboard';
 import Navbar from './components/Navbar';
-import AccountPage from './components/AccountPage'; // Add this import
+import AccountPage from './components/AccountPage'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -34,13 +34,13 @@ function App() {
         position: 'fixed', 
         top: '20px', 
         right: '20px', 
-        zIndex: 1001 // Higher than navbar
+        zIndex: 1001 
       }}>
         <AuthButtons />
       </div>
       
       <div style={{ 
-        paddingTop: '80px', // Account for fixed navbar
+        paddingTop: '80px', 
         minHeight: 'calc(100vh - 80px)'
       }}>
         <Routes>
